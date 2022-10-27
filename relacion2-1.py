@@ -10,6 +10,8 @@ salir = False
 # Funcion que muestra al usuario las opciones posibles
 # E: Nada
 # S: String con una opcion que puede valer para el menu o no
+
+
 def menu():
     #Limpiamos pantalla de terminal
     os.system('cls')
@@ -23,6 +25,8 @@ def menu():
 #Funcion que añade un valor al diccionario
 # E: Nada
 # S: Nada
+
+
 def añadeValor():
     #Cogemos el array global
     global d
@@ -32,7 +36,7 @@ def añadeValor():
     # Obtenemos la ultima posicion del diccionario
     ultimaPos = len(d)
     # print(ultimaPos + 1)
-    clave = "Valor" + str (ultimaPos + 1)
+    clave = "Valor" + str(ultimaPos + 1)
     #Creamos un string para la clave y añadimos el valor
     d[clave] = nombre
     #Volvemos a main
@@ -41,6 +45,8 @@ def añadeValor():
 #Funcion para eliminar 1 solo valor del diccionario
 # E: Nada
 # S: Nada
+
+
 def eliminarValor():
     #Cogemos el diccionario global
     global d
@@ -62,6 +68,8 @@ def eliminarValor():
 # Funcion para mostrar todos los datos del diccionario si los tienen
 # E: Nada
 # S: Nada
+
+
 def mostrarDiccionario():
     #Cogemos el diccionario global
     global d
@@ -82,13 +90,15 @@ def mostrarDiccionario():
 # Funcion que borra el diccionario completamente
 # E: Nada
 # S: Nada
+
+
 def borrarDiccionario():
     #Cogemos el diccionario global
     global d
     #Preguntamos si quiere borrar el diccionario entero
     print("¿De verdad que quieres borrar todo el contenido del diccionario? S-si N-no: ", end="")
     eleccion = input()
-    #Mientras que se nos mande S o s 
+    #Mientras que se nos mande S o s
     if (eleccion == "S" or eleccion == "s"):
         #Se borra el diccionario y lo notificamos al usuario
         d.clear()
@@ -101,6 +111,8 @@ def borrarDiccionario():
 # Funcion para salir del programa con un mensaje de despedida
 # E: Nada
 # S: Nada
+
+
 def salirPrograma():
     #Cojemos el booleano global
     global salir
@@ -112,6 +124,8 @@ def salirPrograma():
 # Funcion main que trata que hacer con cada opcion
 # E: Nada
 # S: Nada
+
+
 def main():
     #Cojemos el booleano global
     global salir
@@ -123,7 +137,7 @@ def main():
         match opcionMenu:
             case 1:
                 añadeValor()
-            case 2:      
+            case 2:
                 eliminarValor()
             case 3:
                 mostrarDiccionario()
@@ -133,7 +147,9 @@ def main():
                 salirPrograma()
             case other:
                 #Pero si no de da ningun caso se lo mostramos al usuario por pantalla
-                print("No has seleccionado una opcion correcta, pulsa una tecla para continuar")
+                print(
+                    "No has seleccionado una opcion correcta, pulsa una tecla para continuar")
                 msvcrt.getch()
-            
+
+
 main()
