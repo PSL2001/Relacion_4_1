@@ -1,5 +1,5 @@
 #Importes
-import calculos
+import package.calculos as calculos
 
 calculos.suma()
 calculos.resta()
